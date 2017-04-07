@@ -8,7 +8,7 @@ def index():
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():
-    print "test"
+    
     #print request.form
     # request.form is a dictionary of values 
 
@@ -19,6 +19,7 @@ def result():
 
     if len(request.form['name']) < 1:
         flash("Name cannot be empty!")
+        print name
         return redirect('/')
     if len(request.form['comment']) < 1:
         flash("Comment is not actually optional...")
