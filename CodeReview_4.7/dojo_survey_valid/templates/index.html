@@ -1,0 +1,32 @@
+<html>
+    <head>
+       <title>Dojo Survey Index</title>
+    </head>
+    <body>
+      <h1>Index Page</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+      <h3>Create a User</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/result' method='post'>
+          Your Name: <input type='text' name='name'>
+          <select name='location' required>
+              <option value="seattle">Seattle</option>
+              <option value="sanfran">San Francisco</option>
+          </select>
+          <select name='language' required>
+              <option value="python">Python</option>
+              <option value="javascript">JavaScript</option>
+          </select>
+          Comment (optional): 
+            <textarea name='comment'>
+              </textarea>     
+          <input type='submit' value='survey_info'>
+      </form>
+    </body>
+</html>
