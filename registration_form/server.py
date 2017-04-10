@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect, session, flash
 app = Flask(__name__)
 app.secret_key = 'ThisIsSecret'
 
+def is_number(s):
+    return any(i.isdigit() for i in s)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -22,6 +25,8 @@ def result():
         flash("Name fields cannot be empty")
         flag = 1
     # password more than 8
+    if is_number(first_name) or is_number(last_name):
+        flash("Name fields cannot include a number")
     if len(passw) <= 8:
         flash("Password must be longer than 8 characters")
         flag = 1
