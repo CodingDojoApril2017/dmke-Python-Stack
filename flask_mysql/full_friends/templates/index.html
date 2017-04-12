@@ -1,0 +1,22 @@
+
+<html>
+<head>
+  <title>Friends</title>
+</head>
+<body>
+{{ all_friends }}
+<h1>Friends:</h1>
+<!-- with all the data we can then construct a more structured output -->
+{% for friend in all_friends: %}
+   <p>Name: {{ friend['first_name'] }}</p>
+   <p>Age: {{ friend['age'] }}</p>
+   <hr>
+{% endfor %}
+  <h2>Add a Friend</h2>
+  <form action='/add' method='POST'>
+    <label for="first_name">Name:<input type="text" name="first_name" id="first_name"></label>
+    <label for="age">Age:<input type="text" name="age" id="age"></label>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
