@@ -1,0 +1,16 @@
+<html>
+    <head>
+       <title>Registration Form</title>
+    </head>
+    <body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <h2>{{message}}</h2>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+      <h3>SUCCESS </h3>
+      {{ testmydb }}
+    </body>
+</html>
