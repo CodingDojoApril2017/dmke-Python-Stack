@@ -1,32 +1,39 @@
+<!DOCTYPE html>
 <html>
-    <head>
-       <title>Registration Form</title>
-    </head>
-    <body>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      {% for message in messages %}
-        <h2>{{message}}</h2>
-      {% endfor %}
-    {% endif %}
-  {% endwith %}
-      <h3>Register </h3>
-      {{ testmydb }}
-      <form action='/register' method='post'>
-          First Name: <input type='text' name='first_name' value = {{first_name}}>
-          Last Name: <input type='text' name='last_name' value = {{last_name}}>
-          Email: <input type='text' name='email' value = {{email}}>
-          Password: <input type='password' name='passw'>
-          Confirm Password: <input type='password' name='confirm_passw'>   
-          <input type='submit' value='register'>
-      </form>
-    </body>
-</html>
+  <head>
+    <meta charset="utf-8">
+    <title>Log/ Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css')}}" media="screen" />
+  </head>
+  <body>
+    <div class="main_content">
+      <fieldset>
+        <legend>Register</legend>
+        
+        <form class="register" action="/register" method="post">
+          <label for="first_name">
+            First Name
+            <input type="text" name="first_name" min='2'>
+          </label>
+          <label for="last_name">
+            Last name
+            <input type="text" name="last_name">
+          </label>
 
-<!--
-{% for friend in all_friends: %}
-   <p>Name: {{ friend['first_name'] }}</p>
-   <p>Age: {{ friend['age'] }}</p>
-   <hr>
-{% endfor %}
--->
+          <label for="email">
+            Email
+            <input type="text" name="email" value='email'>
+          </label>         
+
+          <label for="password">
+            Password
+            <input type="password" name="passw" value='password'>
+          </label>
+
+          <label for="password_confirmation">
+            Confirm Password
+            <input type="password" name="confirm_passw" value='password'>
+          </label>
+          <button type="submit" name="button">Register</button>
+        </form>
+      </fieldset>

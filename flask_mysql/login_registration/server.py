@@ -2,7 +2,7 @@ from flask import Flask, request, redirect, render_template, session, flash
 from mysqlconnection import MySQLConnector
 app = Flask(__name__)
 app.secret_key = 'ThisIsSecret'
-mysql = MySQLConnector(app,'logindb')
+mysql = MySQLConnector(app,'thewall_db')
 
 @app.route('/')
 def index():
@@ -74,11 +74,12 @@ def register():
     }
     # Run query with dictionary values in query, in this case query is an insert!
     mysql.query_db(query, data)
-    return redirect('/success')
+    return redirect('/')
 
+"""
 @app.route('/success')
 def success():
-    
+"""    
 
     
 app.run(debug=True)

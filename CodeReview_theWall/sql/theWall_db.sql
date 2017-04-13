@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `thewall_db`.`users` (
   `last_name` VARCHAR(255) NULL,
   `email` VARCHAR(255) NULL,
   `password` VARCHAR(255) NULL,
+  `hwpassword` VARCHAR(255) NULL,  
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`))
