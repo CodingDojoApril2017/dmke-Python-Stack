@@ -74,7 +74,12 @@ def register():
     }
     # Run query with dictionary values in query, in this case query is an insert!
     mysql.query_db(query, data)
-    return render_template('success.html')
+    return redirect('/success')
+
+@app.route('/success')
+def success():
+    
+
     
 app.run(debug=True)
 

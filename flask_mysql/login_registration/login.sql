@@ -17,13 +17,12 @@ USE `logindb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`friends`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `logindb`.`friends` (
+CREATE TABLE IF NOT EXISTS `logindb`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `passw` VARCHAR(45) NULL,
-  `confirm_passw` VARCHAR(45) NULL,    
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`))
